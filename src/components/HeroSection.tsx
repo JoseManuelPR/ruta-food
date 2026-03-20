@@ -6,7 +6,7 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=1600&q=80"
+          src="https://images.unsplash.com/photo-YmC1_EP6TJQ?w=1600&q=80"
           alt="Ceviche peruano — plato bandera del Perú"
           className="w-full h-full object-cover"
         />

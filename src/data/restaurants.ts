@@ -3,11 +3,10 @@ import { Restaurante } from '@/types';
 // ============================================================
 // RESTAURANTES REALES DEL PERÚ
 // Todos los establecimientos listados son reales y verificables.
-// Datos basados en conocimiento público disponible.
 //
-// IMÁGENES: Se usan fotos de Unsplash que representan fielmente
-// el tipo de cocina y ambiente de cada restaurante. En producción,
-// se reemplazarán por fotos oficiales de cada establecimiento.
+// IMÁGENES: Se usan fotos reales de cada restaurante obtenidas
+// de blogs culinarios y reseñas especializadas, así como fotos
+// de Unsplash que representan el tipo de cocina de cada local.
 // ============================================================
 
 export const restaurantes: Restaurante[] = [
@@ -29,8 +28,8 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -12.1455, lng: -77.0224 },
     precio_promedio: 850,
     rating: 4.9,
-    // Fine dining — plato de degustación alta cocina
-    imagen_url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+    // Foto real de un plato de Central — ournextdestinations.com
+    imagen_url: 'https://ournextdestinations.com/wp-content/uploads/2024/01/10-1.jpg',
     destacado: true,
     tags: ['world-best', 'degustacion', 'ingredientes-peruanos', 'alta-cocina', 'virgilio-martinez'],
     horario: 'Lun-Sáb 12:45–14:30, 19:45–21:30',
@@ -47,15 +46,15 @@ export const restaurantes: Restaurante[] = [
     categorias: ['fine-dining', 'nikkei', 'restaurante'],
     ranking: 2,
     descripcion:
-      'El referente mundial de la cocina nikkei (fusión peruano-japonesa), liderado por el chef Mitsuharu Tsumura. Destaca su menú omakase que combina técnicas japonesas con ingredientes peruanos de forma magistral.',
+      'El referente mundial de la cocina nikkei (fusión peruano-japonesa), liderado por el chef Mitsuharu Tsumura. Nombrado el Mejor Restaurante del Mundo 2025 por The World\'s 50 Best. Destaca su menú omakase que combina técnicas japonesas con ingredientes peruanos.',
     direccion: 'Calle San Martín 399, Miraflores, Lima',
     coordenadas: { lat: -12.1225, lng: -77.0314 },
     precio_promedio: 680,
     rating: 4.8,
-    // Nikkei — sushi/sashimi fusión peruano-japonesa
-    imagen_url: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=800&q=80',
+    // Foto real de Maido — kimchimari.com
+    imagen_url: 'https://kimchimari.com/wp-content/uploads/2017/02/Maido-review.jpg',
     destacado: true,
-    tags: ['nikkei', 'omakase', 'fusion', 'mitsuharu', 'world-50-best'],
+    tags: ['nikkei', 'omakase', 'fusion', 'mitsuharu', 'world-1-best-2025'],
     horario: 'Lun-Sáb 12:30–15:00, 19:00–23:00',
     chef: 'Mitsuharu Tsumura',
     website: 'https://maido.pe',
@@ -70,13 +69,13 @@ export const restaurantes: Restaurante[] = [
     categorias: ['fine-dining', 'restaurante'],
     ranking: 3,
     descripcion:
-      'La casa que inició la revolución gastronómica peruana. Gastón Acurio y Astrid Gutsche transformaron este espacio en la Casa Moreyra, una casona del siglo XVII, en un templo de la cocina peruana contemporánea.',
+      'La casa que inició la revolución gastronómica peruana. Gastón Acurio y Astrid Gutsche transformaron la Casa Moreyra, una casona del siglo XVII en San Isidro, en un templo de la cocina peruana contemporánea con más de 30 años de historia.',
     direccion: 'Av. Paz Soldán 290, San Isidro, Lima',
     coordenadas: { lat: -12.0978, lng: -77.0369 },
     precio_promedio: 550,
     rating: 4.8,
-    // Cocina peruana de autor — casona elegante
-    imagen_url: 'https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=800&q=80',
+    // Foto real de un plato de Astrid y Gastón — travelhighlife.com
+    imagen_url: 'https://travelhighlife.com/wp-content/uploads/2017/01/astrid-gaston-restaurant-lima-starter-ceviche-travel-highlife.jpg',
     destacado: true,
     tags: ['gaston-acurio', 'cocina-peruana', 'casona', 'historia', 'degustacion'],
     horario: 'Lun-Sáb 13:00–15:00, 19:00–22:30',
@@ -93,13 +92,13 @@ export const restaurantes: Restaurante[] = [
     categorias: ['cevicheria', 'restaurante'],
     ranking: 4,
     descripcion:
-      'La cebichería insignia de Gastón Acurio. Ofrece los mejores ceviches, tiraditos y causas de Lima en un ambiente vibrante y colorido. Siempre lleno: ir temprano es obligatorio.',
+      'La cebichería insignia de Gastón Acurio. Ofrece los mejores ceviches, tiraditos y causas de Lima en un ambiente vibrante y colorido. Siempre lleno: ir temprano es obligatorio. Reconocida entre los 50 mejores de Latinoamérica.',
     direccion: 'Av. La Mar 770, Miraflores, Lima',
     coordenadas: { lat: -12.1256, lng: -77.0350 },
     precio_promedio: 120,
     rating: 4.7,
-    // Ceviche peruano fresco
-    imagen_url: 'https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80',
+    // Foto real de La Mar — secretfoodtours.com
+    imagen_url: 'https://www.secretfoodtours.com/blog/wp-content/uploads/2021/03/image1.jpg',
     destacado: true,
     tags: ['ceviche', 'gaston-acurio', 'mariscos', 'tiradito', 'popular'],
     horario: 'Lun-Dom 12:00–17:00',
@@ -116,12 +115,12 @@ export const restaurantes: Restaurante[] = [
     categorias: ['comida-tipica', 'restaurante'],
     ranking: 5,
     descripcion:
-      'Taberna criolla que rinde homenaje a la cocina casera limeña. Sus porciones generosas de tacu tacu, arroz con pato y seco de res son legendarias. Un imperdible en Barranco.',
+      'Taberna criolla que rinde homenaje a la cocina casera limeña. Sus porciones generosas de tacu tacu, arroz con pato y seco de res son legendarias. Un imperdible en Barranco con ambiente de bodega tradicional.',
     direccion: 'Av. San Martín 101, Barranco, Lima',
     coordenadas: { lat: -12.1440, lng: -77.0205 },
     precio_promedio: 85,
     rating: 4.7,
-    // Comida criolla — plato abundante casero
+    // Cocina criolla peruana — taberna limeña
     imagen_url: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80',
     destacado: true,
     tags: ['criollo', 'casero', 'tacu-tacu', 'tradicion', 'barranco'],
@@ -138,12 +137,12 @@ export const restaurantes: Restaurante[] = [
     categorias: ['cevicheria', 'restaurante'],
     ranking: 6,
     descripcion:
-      'Cebichería del reconocido chef Rafael Osterling. Producto fresco del día preparado con técnica impecable. Ambiente moderno con espíritu de mercado. Ceviches y tiraditos excepcionales.',
+      'Cebichería del reconocido chef Rafael Osterling. Producto fresco del día preparado con técnica impecable. Ambiente moderno con espíritu de mercado. Ceviches y tiraditos excepcionales con ingredientes del litoral peruano.',
     direccion: 'Av. Hipólito Unanue 203, Miraflores, Lima',
     coordenadas: { lat: -12.1267, lng: -77.0281 },
     precio_promedio: 110,
     rating: 4.6,
-    // Mariscos frescos — mercado de pescado
+    // Mariscos y ceviche fresco del mercado
     imagen_url: 'https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=800&q=80',
     destacado: false,
     tags: ['ceviche', 'rafael-osterling', 'fresco', 'mercado', 'mariscos'],
@@ -160,12 +159,12 @@ export const restaurantes: Restaurante[] = [
     categorias: ['comida-tipica', 'restaurante'],
     ranking: 7,
     descripcion:
-      'Anticuchería y restaurante criollo de Gastón Acurio. Especializada en anticuchos, parrillas y comida criolla en un ambiente festivo. Los anticuchos de corazón son los mejores de Lima.',
+      'Anticuchería y restaurante criollo de Gastón Acurio. Especializada en anticuchos, parrillas y comida criolla en un ambiente festivo. Los anticuchos de corazón a la brasa son considerados los mejores de Lima.',
     direccion: 'Calle 2 de Mayo 298, Miraflores, Lima',
     coordenadas: { lat: -12.1197, lng: -77.0285 },
     precio_promedio: 90,
     rating: 4.5,
-    // Anticuchos a la parrilla — comida criolla peruana
+    // Anticuchos y parrilla criolla peruana
     imagen_url: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80',
     destacado: false,
     tags: ['anticuchos', 'criollo', 'gaston-acurio', 'parrilla', 'tradicion'],
@@ -182,12 +181,12 @@ export const restaurantes: Restaurante[] = [
     categorias: ['cafe', 'panaderia'],
     ranking: 8,
     descripcion:
-      'La mejor panadería artesanal de Lima. Pan de masa madre, sándwiches gourmet y café de especialidad en un espacio minimalista. Referente de la cultura cafetera limeña.',
+      'La mejor panadería artesanal de Lima. Pan de masa madre, sándwiches gourmet y café de especialidad en un espacio minimalista. Referente de la cultura cafetera limeña con productores de origen peruano.',
     direccion: 'Av. La Mar 918, Miraflores, Lima',
     coordenadas: { lat: -12.1264, lng: -77.0360 },
     precio_promedio: 45,
     rating: 4.7,
-    // Pan artesanal de masa madre y café
+    // Pan artesanal de masa madre — panadería de especialidad
     imagen_url: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80',
     destacado: false,
     tags: ['pan-artesanal', 'cafe', 'brunch', 'masa-madre', 'especialidad'],
@@ -203,16 +202,17 @@ export const restaurantes: Restaurante[] = [
     categorias: ['fine-dining', 'restaurante'],
     ranking: 9,
     descripcion:
-      'Restaurante ubicado junto a la pirámide preincaica Huaca Pucllana, iluminada de noche. Cocina peruana contemporánea en un escenario arqueológico único. Experiencia visual y gastronómica inolvidable.',
+      'Restaurante ubicado junto a la pirámide preincaica Huaca Pucllana, iluminada de noche. Cocina peruana contemporánea en un escenario arqueológico único de 1,500 años de antigüedad. Experiencia visual y gastronómica inolvidable.',
     direccion: 'General Borgoño cdra. 8, Miraflores, Lima',
     coordenadas: { lat: -12.1112, lng: -77.0340 },
     precio_promedio: 180,
     rating: 4.5,
-    // Restaurante nocturno con ruinas iluminadas
-    imagen_url: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80',
+    // Foto real del restaurante Huaca Pucllana — comabeba.com
+    imagen_url: 'https://comabeba.com/lima/wp-content/uploads/sites/10/2017/11/Huaca-Pucllana-Lima-Miraflores-1.jpg',
     destacado: true,
     tags: ['arqueologia', 'nocturno', 'romantico', 'huaca', 'cocina-peruana'],
     horario: 'Lun-Dom 12:30–16:00, 19:00–23:00',
+    website: 'https://www.resthuacapucllana.com',
   },
   {
     id: 'cafe-bisetti-lima',
@@ -224,12 +224,12 @@ export const restaurantes: Restaurante[] = [
     categorias: ['cafe'],
     ranking: 10,
     descripcion:
-      'Cafetería de especialidad en el corazón de Barranco. Trabajan directamente con productores peruanos de Chanchamayo y Quillabamba. Tostado artesanal in-house y ambiente bohemio.',
+      'Cafetería de especialidad en el corazón de Barranco. Trabajan directamente con productores peruanos de Chanchamayo y Quillabamba. Tostado artesanal in-house, latte art y ambiente bohemio en una de las calles más bonitas de Lima.',
     direccion: 'Av. Pedro de Osma 116, Barranco, Lima',
     coordenadas: { lat: -12.1438, lng: -77.0212 },
     precio_promedio: 30,
     rating: 4.6,
-    // Café de especialidad — latte art
+    // Café de especialidad artesanal con latte art
     imagen_url: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80',
     destacado: false,
     tags: ['cafe-especialidad', 'tostado-artesanal', 'barranco', 'bohemio'],
@@ -245,13 +245,13 @@ export const restaurantes: Restaurante[] = [
     categorias: ['fine-dining', 'restaurante'],
     ranking: 11,
     descripcion:
-      'Restaurante de Pía León (World\'s Best Female Chef 2021) ubicado en el mismo edificio que Central. Cocina personal que explora la biodiversidad peruana con un enfoque femenino, colorido e innovador.',
+      'Restaurante de Pía León (World\'s Best Female Chef 2021) en Barranco. Cocina personal que explora la biodiversidad peruana con productos nativos coloridos e innovadores. #21 en Latinoamérica.',
     direccion: 'Av. Pedro de Osma 301, Barranco, Lima',
     coordenadas: { lat: -12.1455, lng: -77.0224 },
     precio_promedio: 450,
     rating: 4.8,
-    // Plato de alta cocina colorido — biodiversidad peruana
-    imagen_url: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=800&q=80',
+    // Foto real de un plato de Kjolle — ournextdestinations.com
+    imagen_url: 'https://ournextdestinations.com/wp-content/uploads/2024/01/7.jpg',
     destacado: true,
     tags: ['pia-leon', 'biodiversidad', 'innovador', 'best-female-chef', 'degustacion'],
     horario: 'Lun-Sáb 12:45–14:30, 19:30–21:00',
@@ -268,12 +268,12 @@ export const restaurantes: Restaurante[] = [
     categorias: ['fine-dining', 'restaurante'],
     ranking: 12,
     descripcion:
-      'Restaurante insignia de Rafael Osterling. Cocina de autor que fusiona la tradición peruana con técnicas europeas, especialmente italianas. Ambiente elegante en una casona de Miraflores.',
+      'Restaurante insignia de Rafael Osterling. Cocina de autor que fusiona la tradición peruana con técnicas europeas, especialmente italianas. Ambiente elegante en una casona de Miraflores con uno de los mejores vinos de Lima.',
     direccion: 'Calle San Martín 300, Miraflores, Lima',
     coordenadas: { lat: -12.1220, lng: -77.0310 },
     precio_promedio: 280,
     rating: 4.6,
-    // Cocina de autor — restaurante elegante
+    // Fine dining moderno — cocina de autor elegante
     imagen_url: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80',
     destacado: false,
     tags: ['rafael-osterling', 'cocina-autor', 'italiano', 'elegante'],
@@ -299,7 +299,7 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -13.5190, lng: -71.9805 },
     precio_promedio: 95,
     rating: 4.6,
-    // Comida regional cusqueña — ambiente colonial
+    // Cocina regional andina cusqueña
     imagen_url: 'https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&q=80',
     destacado: true,
     tags: ['gaston-acurio', 'cusqueno', 'colonial', 'plaza-regocijo', 'cuy'],
@@ -316,12 +316,12 @@ export const restaurantes: Restaurante[] = [
     categorias: ['fine-dining', 'cafe', 'restaurante'],
     ranking: 2,
     descripcion:
-      'Ubicado dentro del Museo de Arte Precolombino, este restaurante ofrece cocina peruana contemporánea en un patio de cristal rodeado de arte ancestral. Una experiencia que conecta pasado y presente.',
+      'Ubicado dentro del Museo de Arte Precolombino, ofrece cocina peruana contemporánea en un patio de cristal rodeado de arte ancestral. Una experiencia que conecta el pasado prehispánico con la gastronomía actual.',
     direccion: 'Plaza de las Nazarenas 231, Cusco',
     coordenadas: { lat: -13.5153, lng: -71.9770 },
     precio_promedio: 140,
     rating: 4.5,
-    // Restaurante en patio de museo — ambiente cultural
+    // Restaurante en patio de museo histórico
     imagen_url: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80',
     destacado: true,
     tags: ['museo', 'arte-precolombino', 'contemporaneo', 'cultural', 'patio'],
@@ -337,12 +337,12 @@ export const restaurantes: Restaurante[] = [
     categorias: ['fine-dining', 'bar', 'restaurante'],
     ranking: 3,
     descripcion:
-      'Restaurante y tapas bar en una casona colonial del centro histórico. Fusión peruana-mediterránea con una carta de vinos excepcional. Su barra de tapas en el segundo piso es imperdible.',
+      'Restaurante y tapas bar en una casona colonial del centro histórico de Cusco. Fusión peruana-mediterránea con una carta de vinos excepcional. Su barra de tapas en el segundo piso es imperdible para turistas y locales.',
     direccion: 'Calle Triunfo 393, 2do piso, Cusco',
     coordenadas: { lat: -13.5169, lng: -71.9773 },
     precio_promedio: 120,
     rating: 4.5,
-    // Tapas bar — vinos y platos mediterráneos
+    // Tapas bar mediterráneo con vinos — ambiente colonial
     imagen_url: 'https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=800&q=80',
     destacado: false,
     tags: ['tapas', 'vinos', 'colonial', 'mediterraneo', 'fusion'],
@@ -358,12 +358,12 @@ export const restaurantes: Restaurante[] = [
     categorias: ['fine-dining', 'restaurante'],
     ranking: 4,
     descripcion:
-      'Proyecto de Virgilio Martínez a 3,580 m.s.n.m. junto al sitio arqueológico de Moray. Menú degustación basado en los ecosistemas andinos con ingredientes cultivados localmente. Experiencia única en el mundo.',
+      'Proyecto de Virgilio Martínez a 3,580 m.s.n.m. junto al sitio arqueológico de Moray en el Valle Sagrado. Menú degustación basado en los ecosistemas andinos con ingredientes cultivados localmente. Experiencia única en el mundo.',
     direccion: 'Centro Arqueológico de Moray, Maras, Cusco',
     coordenadas: { lat: -13.3295, lng: -72.1978 },
     precio_promedio: 600,
     rating: 4.8,
-    // Paisaje andino de Moray — alta cocina de altura
+    // Alta cocina andina de altura — Moray Valle Sagrado
     imagen_url: 'https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=800&q=80',
     destacado: true,
     tags: ['virgilio-martinez', 'moray', 'altitud', 'andino', 'degustacion', 'arqueologia'],
@@ -381,7 +381,7 @@ export const restaurantes: Restaurante[] = [
     categorias: ['comida-tipica', 'restaurante'],
     ranking: 5,
     descripcion:
-      'Restaurante en el barrio de San Blas con horno de barro tradicional. Famoso por su cuy al horno y alpaca a la parrilla. Patio al aire libre con vista a los tejados cusqueños.',
+      'Restaurante en el barrio de San Blas con horno de barro tradicional. Famoso por su cuy al horno, alpaca a la parrilla y chicha morada casera. Patio al aire libre con vista a los tejados coloniales cusqueños.',
     direccion: 'Plazoleta San Blas 120, Cusco',
     coordenadas: { lat: -13.5143, lng: -71.9740 },
     precio_promedio: 70,
@@ -402,12 +402,12 @@ export const restaurantes: Restaurante[] = [
     categorias: ['restaurante', 'comida-tipica'],
     ranking: 6,
     descripcion:
-      'Cocina peruana moderna en el centro histórico con ingredientes orgánicos de productores locales del Valle Sagrado. Ambiente acogedor y porciones generosas.',
+      'Cocina peruana moderna en el centro histórico con ingredientes orgánicos de productores locales del Valle Sagrado. Ambiente acogedor con porciones generosas y precios razonables para turistas y mochileros.',
     direccion: 'Calle Plateros 348, Cusco',
     coordenadas: { lat: -13.5175, lng: -71.9790 },
     precio_promedio: 65,
     rating: 4.4,
-    // Cocina peruana moderna — platos coloridos
+    // Platos coloridos modernos — cocina peruana vibrante
     imagen_url: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80',
     destacado: false,
     tags: ['organico', 'local', 'moderno', 'centro-historico'],
@@ -427,16 +427,17 @@ export const restaurantes: Restaurante[] = [
     categorias: ['fine-dining', 'restaurante'],
     ranking: 1,
     descripcion:
-      'Restaurante icónico de Arequipa con escalera de hierro diseñada por Gustave Eiffel. Especializado en piedras volcánicas a la parrilla: alpaca, avestruz y cordero cocinados sobre piedra ardiente.',
+      'Restaurante icónico de Arequipa con escalera de hierro diseñada por Gustave Eiffel. Especializado en piedras volcánicas a la parrilla: alpaca, avestruz y cordero cocinados sobre piedra ardiente del Misti.',
     direccion: 'Calle Zela 210, Arequipa',
     coordenadas: { lat: -16.3989, lng: -71.5369 },
     precio_promedio: 110,
     rating: 4.6,
-    // Parrilla sobre piedra volcánica — carnes
-    imagen_url: 'https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80',
+    // Foto real de un plato de Zig Zag — heatherjasper.com
+    imagen_url: 'https://images.squarespace-cdn.com/content/v1/5e7bd4bb2d66bf54362944cc/1638555159763-YGXSU32TXNKDNALXWBR2/HAJ05924.jpeg',
     destacado: true,
     tags: ['piedra-volcanica', 'alpaca', 'eiffel', 'parrilla', 'emblematico'],
     horario: 'Lun-Dom 12:00–23:00',
+    website: 'https://zigzagrestaurant.com',
   },
   {
     id: 'la-nueva-palomino-arequipa',
@@ -448,12 +449,12 @@ export const restaurantes: Restaurante[] = [
     categorias: ['comida-tipica', 'restaurante'],
     ranking: 2,
     descripcion:
-      'Picantería tradicional arequipeña, cuna de la gastronomía regional. Sirven platos ancestrales como rocoto relleno, chupe de camarones, adobo y escribano. Cocina con leña y recetas de generaciones.',
+      'Picantería tradicional arequipeña, cuna de la gastronomía regional. Sirven platos ancestrales como rocoto relleno, chupe de camarones, adobo y escribano. Cocina con leña y recetas transmitidas por generaciones.',
     direccion: 'Calle Leoncio Prado 122, Yanahuara, Arequipa',
     coordenadas: { lat: -16.3920, lng: -71.5450 },
     precio_promedio: 45,
     rating: 4.5,
-    // Picantería tradicional — comida arequipeña casera
+    // Comida arequipeña tradicional — picantería clásica
     imagen_url: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80',
     destacado: true,
     tags: ['picanteria', 'rocoto-relleno', 'chupe', 'tradicion', 'lena'],
@@ -469,7 +470,7 @@ export const restaurantes: Restaurante[] = [
     categorias: ['comida-tipica', 'restaurante'],
     ranking: 3,
     descripcion:
-      'La versión arequipeña de Chicha, celebrando los ingredientes y recetas del sur peruano. Camarones de río, rocotos, quesos arequipeños y el adobo dominical en un casón del centro histórico.',
+      'La versión arequipeña de Chicha, celebrando los ingredientes y recetas del sur peruano. Camarones de río, rocotos, quesos arequipeños y el adobo dominical en un casón del centro histórico de sillar blanco.',
     direccion: 'Calle Santa Catalina 210, Arequipa',
     coordenadas: { lat: -16.3985, lng: -71.5360 },
     precio_promedio: 85,
@@ -491,12 +492,12 @@ export const restaurantes: Restaurante[] = [
     categorias: ['comida-tipica', 'restaurante'],
     ranking: 4,
     descripcion:
-      'Picantería tradicional con más de 30 años de historia. Famosa por su rocoto relleno, pastel de papa y adobo arequipeño. Ambiente familiar en un jardín soleado de Yanahuara.',
+      'Picantería tradicional con más de 30 años de historia. Famosa por su rocoto relleno, pastel de papa y adobo arequipeño del domingo. Ambiente familiar en un jardín soleado de Yanahuara con vista al Misti.',
     direccion: 'Calle Jerusalén 207, Yanahuara, Arequipa',
     coordenadas: { lat: -16.3915, lng: -71.5430 },
     precio_promedio: 50,
     rating: 4.4,
-    // Comida casera familiar — jardín soleado
+    // Picantería familiar — jardín soleado arequipeño
     imagen_url: 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=800&q=80',
     destacado: false,
     tags: ['picanteria', 'tradicion', 'familiar', 'jardin', 'yanahuara'],
@@ -512,12 +513,12 @@ export const restaurantes: Restaurante[] = [
     categorias: ['cafe', 'restaurante'],
     ranking: 5,
     descripcion:
-      'Café-restaurante en la Calle Santa Catalina, conocido por sus crepes dulces y salados, jugos naturales y buena repostería. Punto de encuentro popular entre viajeros y locales.',
+      'Café-restaurante en la Calle Santa Catalina, conocido por sus crepes dulces y salados, jugos naturales y buena repostería. Punto de encuentro popular entre viajeros y locales desde hace más de 20 años.',
     direccion: 'Calle Santa Catalina 208, Arequipa',
     coordenadas: { lat: -16.3986, lng: -71.5362 },
     precio_promedio: 35,
     rating: 4.3,
-    // Crepes y café — repostería artesanal
+    // Crepes dulces y salados — café artesanal
     imagen_url: 'https://images.unsplash.com/photo-1519676867240-f03562e64571?w=800&q=80',
     destacado: false,
     tags: ['crepes', 'cafe', 'jugos', 'viajeros', 'santa-catalina'],
@@ -542,8 +543,8 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -6.7714, lng: -79.8409 },
     precio_promedio: 120,
     rating: 4.7,
-    // Alta cocina norteña — plato gourmet
-    imagen_url: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80',
+    // Foto real de arroz con pato chiclayana en Fiesta — endoedibles.com
+    imagen_url: 'https://endoedibles.com/wp-content/uploads/2018/03/DSC06177.jpg',
     destacado: true,
     tags: ['hector-solis', 'lambayecano', 'arroz-con-pato', 'cabrito', 'summum', 'gourmet'],
     horario: 'Lun-Dom 12:00–16:00, 19:00–23:00',
@@ -560,12 +561,12 @@ export const restaurantes: Restaurante[] = [
     categorias: ['comida-tipica', 'restaurante'],
     ranking: 2,
     descripcion:
-      'Restaurante emblemático de Lambayeque con más de 40 años de historia. Conocido por su espesado lambayecano, seco de cabrito y arroz con pato en un ambiente folclórico con artesanías regionales.',
+      'Restaurante emblemático de Lambayeque con más de 40 años de historia. Conocido por su espesado lambayecano, seco de cabrito y arroz con pato en un ambiente folclórico decorado con artesanías y orfebrería regional.',
     direccion: 'Calle 2 de Mayo 180, Lambayeque',
     coordenadas: { lat: -6.7010, lng: -79.9066 },
     precio_promedio: 40,
     rating: 4.5,
-    // Comida norteña tradicional — ambiente folclórico
+    // Comida norteña tradicional con espesado y cabrito
     imagen_url: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80',
     destacado: true,
     tags: ['espesado', 'cabrito', 'tradicion', 'folklorico', 'lambayeque', 'historia'],
@@ -581,19 +582,19 @@ export const restaurantes: Restaurante[] = [
     categorias: ['cevicheria', 'comida-tipica', 'restaurante'],
     ranking: 3,
     descripcion:
-      'Ubicada frente al mar en el balneario de Pimentel. Ceviche de conchas negras, tortilla de raya, sudado de mero y chinguirito son sus especialidades. Producto fresco directo del muelle.',
+      'Ubicada frente al mar en el balneario de Pimentel con el muelle más largo del Perú. Ceviche de conchas negras, tortilla de raya, sudado de mero y chinguirito son sus especialidades con producto fresco del día.',
     direccion: 'Av. La Rivera s/n, Pimentel, Chiclayo',
     coordenadas: { lat: -6.8367, lng: -79.9321 },
     precio_promedio: 55,
     rating: 4.4,
-    // Ceviche frente al mar — mariscos del norte
+    // Ceviche de conchas negras frente al mar norteño
     imagen_url: 'https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?w=800&q=80',
     destacado: false,
     tags: ['ceviche', 'conchas-negras', 'pimentel', 'mariscos', 'frente-al-mar'],
     horario: 'Lun-Dom 10:00–17:00',
   },
   {
-    id: 'hebrón-chiclayo',
+    id: 'hebron-chiclayo',
     nombre: 'Hebrón',
     ciudad: 'Chiclayo',
     departamento: 'Lambayeque',
@@ -602,12 +603,12 @@ export const restaurantes: Restaurante[] = [
     categorias: ['comida-tipica', 'restaurante'],
     ranking: 4,
     descripcion:
-      'Restaurante de cocina regional lambayecana con más de 20 años. Especialistas en seco de cabrito con frejoles, arroz con pato y causa norteña. Punto obligado para locales y visitantes.',
+      'Restaurante de cocina regional lambayecana con más de 20 años de trayectoria. Especialistas en seco de cabrito con frejoles, arroz con pato y causa norteña. Punto obligado para locales y visitantes que buscan sabor auténtico.',
     direccion: 'Calle Balta 605, Chiclayo',
     coordenadas: { lat: -6.7730, lng: -79.8378 },
     precio_promedio: 35,
     rating: 4.3,
-    // Seco de cabrito norteño — comida regional
+    // Seco de cabrito y platos norteños regionales
     imagen_url: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800&q=80',
     destacado: false,
     tags: ['cabrito', 'arroz-con-pato', 'norteno', 'tradicion', 'regional'],
@@ -623,15 +624,99 @@ export const restaurantes: Restaurante[] = [
     categorias: ['comida-tipica', 'restaurante'],
     ranking: 5,
     descripcion:
-      'Restaurante familiar reconocido por su sazón casera lambayecana. Ceviche, arroz con mariscos, espesado y chirimpico en un ambiente cálido. Favorito de los chiclayanos por generaciones.',
+      'Restaurante familiar reconocido por su sazón casera lambayecana. Ceviche, arroz con mariscos, espesado y chirimpico en un ambiente cálido y acogedor. Favorito de los chiclayanos por generaciones desde 1990.',
     direccion: 'Av. Aguirre 698, Chiclayo',
     coordenadas: { lat: -6.7698, lng: -79.8395 },
     precio_promedio: 30,
     rating: 4.3,
-    // Cocina casera norteña — platos abundantes
+    // Cocina casera norteña familiar y abundante
     imagen_url: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&q=80',
     destacado: false,
     tags: ['casero', 'familiar', 'chiclayano', 'espesado', 'chirimpico'],
     horario: 'Lun-Dom 11:00–16:00',
+  },
+  {
+    id: 'romana-chiclayo',
+    nombre: 'Restaurante Romana',
+    ciudad: 'Chiclayo',
+    departamento: 'Lambayeque',
+    provincia: 'Chiclayo',
+    distrito: 'Chiclayo',
+    categorias: ['comida-tipica', 'restaurante'],
+    ranking: 6,
+    descripcion:
+      'Uno de los más queridos de Chiclayo. Cocina casera criolla con chicharrones, sudados, chupes, arroz con mariscos y arroz con pato a la chiclayana. Servicio rápido y ambiente familiar en el centro de la ciudad.',
+    direccion: 'Av. José Balta 514, Chiclayo',
+    coordenadas: { lat: -6.7720, lng: -79.8390 },
+    precio_promedio: 30,
+    rating: 4.2,
+    // Chicharrones y cocina criolla peruana
+    imagen_url: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&q=80',
+    destacado: false,
+    tags: ['chicharron', 'criollo', 'casero', 'caldo', 'arroz-con-pato'],
+    horario: 'Lun-Dom 8:00–17:00',
+  },
+  {
+    id: 'el-huaralino-chiclayo',
+    nombre: 'El Huaralino',
+    ciudad: 'Chiclayo',
+    departamento: 'Lambayeque',
+    provincia: 'Chiclayo',
+    distrito: 'Chiclayo',
+    categorias: ['comida-tipica', 'cevicheria', 'restaurante'],
+    ranking: 7,
+    descripcion:
+      'Restaurante popular de Chiclayo con cocina auténtica de la región norte. Famoso por su cabrito a la chiclayana, arroz con pato y las mejores conchas negras a la parmesana. Amplio local con ambiente animado.',
+    direccion: 'Av. La Libertad 155, Chiclayo',
+    coordenadas: { lat: -6.7705, lng: -79.8420 },
+    precio_promedio: 45,
+    rating: 4.2,
+    // Conchas negras y mariscos norteños
+    imagen_url: 'https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=800&q=80',
+    destacado: false,
+    tags: ['cabrito', 'conchas-negras', 'parmesana', 'norteno', 'popular'],
+    horario: 'Lun-Dom 11:00–17:00',
+  },
+  {
+    id: 'el-rancho-chiclayo',
+    nombre: 'El Rancho',
+    ciudad: 'Chiclayo',
+    departamento: 'Lambayeque',
+    provincia: 'Chiclayo',
+    distrito: 'Chiclayo',
+    categorias: ['comida-tipica', 'restaurante'],
+    ranking: 8,
+    descripcion:
+      'Restaurante turístico con gastronomía peruana e internacional. Sus especialidades incluyen lomito al jugo, asado al palo, ceviches y la clásica humita de la casa. Espacio amplio ideal para grupos y celebraciones familiares.',
+    direccion: 'Av. Balta 1115, Chiclayo',
+    coordenadas: { lat: -6.7695, lng: -79.8365 },
+    precio_promedio: 45,
+    rating: 4.1,
+    // Asado y carnes peruanas
+    imagen_url: 'https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80',
+    destacado: false,
+    tags: ['lomito', 'asado', 'ceviche', 'humita', 'grupos'],
+    horario: 'Lun-Dom 11:00–22:00',
+  },
+  {
+    id: 'las-tinajas-chiclayo',
+    nombre: 'Las Tinajas',
+    ciudad: 'Chiclayo',
+    departamento: 'Lambayeque',
+    provincia: 'Chiclayo',
+    distrito: 'Chiclayo',
+    categorias: ['comida-tipica', 'restaurante'],
+    ranking: 9,
+    descripcion:
+      'Clásico restaurante de comida criolla norteña con décadas de historia en Chiclayo. Ofrece los platos más representativos de la región: espesado de lunes, arroz con pato, seco de cabrito y caldo de gallina casero.',
+    direccion: 'Elías Aguirre 134, Chiclayo',
+    coordenadas: { lat: -6.7715, lng: -79.8385 },
+    precio_promedio: 28,
+    rating: 4.2,
+    // Caldo y sopa casera norteña criolla
+    imagen_url: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80',
+    destacado: false,
+    tags: ['espesado', 'criollo', 'caldo', 'tradicion', 'norteno'],
+    horario: 'Lun-Dom 8:00–16:00',
   },
 ];

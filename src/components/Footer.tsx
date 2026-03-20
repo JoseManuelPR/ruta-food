@@ -25,7 +25,7 @@ export default function Footer() {
               Ciudades
             </h3>
             <ul className="space-y-2">
-              {['Lima', 'Cusco', 'Arequipa'].map((ciudad) => (
+              {['Lima', 'Cusco', 'Arequipa', 'Chiclayo'].map((ciudad) => (
                 <li key={ciudad}>
                   <Link
                     href={`/explorar?ciudad=${ciudad}`}

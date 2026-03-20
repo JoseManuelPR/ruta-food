@@ -50,6 +50,12 @@ export default function Header() {
               Arequipa
             </Link>
             <Link
+              href="/explorar?ciudad=Chiclayo"
+              className="text-sm text-gray-600 hover:text-primary-600 transition-colors font-medium"
+            >
+              Chiclayo
+            </Link>
+            <Link
               href="/buscar"
               className="flex items-center gap-2 bg-gray-50 hover:bg-gray-100 text-gray-500 text-sm px-4 py-2 rounded-full transition-colors"
             >
@@ -108,6 +114,13 @@ export default function Header() {
               className="block text-gray-700 hover:text-primary-600 font-medium py-2"
             >
               Arequipa
+            </Link>
+            <Link
+              href="/explorar?ciudad=Chiclayo"
+              onClick={() => setMenuOpen(false)}
+              className="block text-gray-700 hover:text-primary-600 font-medium py-2"
+            >
+              Chiclayo
             </Link>
             <Link
               href="/buscar"
