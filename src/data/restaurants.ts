@@ -4,6 +4,10 @@ import { Restaurante } from '@/types';
 // RESTAURANTES REALES DEL PERÚ
 // Todos los establecimientos listados son reales y verificables.
 // Datos basados en conocimiento público disponible.
+//
+// IMÁGENES: Se usan fotos de Unsplash que representan fielmente
+// el tipo de cocina y ambiente de cada restaurante. En producción,
+// se reemplazarán por fotos oficiales de cada establecimiento.
 // ============================================================
 
 export const restaurantes: Restaurante[] = [
@@ -25,6 +29,7 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -12.1455, lng: -77.0224 },
     precio_promedio: 850,
     rating: 4.9,
+    // Fine dining — plato de degustación alta cocina
     imagen_url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
     destacado: true,
     tags: ['world-best', 'degustacion', 'ingredientes-peruanos', 'alta-cocina', 'virgilio-martinez'],
@@ -47,7 +52,8 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -12.1225, lng: -77.0314 },
     precio_promedio: 680,
     rating: 4.8,
-    imagen_url: 'https://images.unsplash.com/photo-1579027989536-b7b1f875659b?w=800&q=80',
+    // Nikkei — sushi/sashimi fusión peruano-japonesa
+    imagen_url: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=800&q=80',
     destacado: true,
     tags: ['nikkei', 'omakase', 'fusion', 'mitsuharu', 'world-50-best'],
     horario: 'Lun-Sáb 12:30–15:00, 19:00–23:00',
@@ -69,6 +75,7 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -12.0978, lng: -77.0369 },
     precio_promedio: 550,
     rating: 4.8,
+    // Cocina peruana de autor — casona elegante
     imagen_url: 'https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=800&q=80',
     destacado: true,
     tags: ['gaston-acurio', 'cocina-peruana', 'casona', 'historia', 'degustacion'],
@@ -91,7 +98,8 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -12.1256, lng: -77.0350 },
     precio_promedio: 120,
     rating: 4.7,
-    imagen_url: 'https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?w=800&q=80',
+    // Ceviche peruano fresco
+    imagen_url: 'https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=800&q=80',
     destacado: true,
     tags: ['ceviche', 'gaston-acurio', 'mariscos', 'tiradito', 'popular'],
     horario: 'Lun-Dom 12:00–17:00',
@@ -113,6 +121,7 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -12.1440, lng: -77.0205 },
     precio_promedio: 85,
     rating: 4.7,
+    // Comida criolla — plato abundante casero
     imagen_url: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80',
     destacado: true,
     tags: ['criollo', 'casero', 'tacu-tacu', 'tradicion', 'barranco'],
@@ -134,7 +143,8 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -12.1267, lng: -77.0281 },
     precio_promedio: 110,
     rating: 4.6,
-    imagen_url: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80',
+    // Mariscos frescos — mercado de pescado
+    imagen_url: 'https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=800&q=80',
     destacado: false,
     tags: ['ceviche', 'rafael-osterling', 'fresco', 'mercado', 'mariscos'],
     horario: 'Lun-Sáb 12:30–16:30',
@@ -155,6 +165,7 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -12.1197, lng: -77.0285 },
     precio_promedio: 90,
     rating: 4.5,
+    // Anticuchos a la parrilla — comida criolla peruana
     imagen_url: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80',
     destacado: false,
     tags: ['anticuchos', 'criollo', 'gaston-acurio', 'parrilla', 'tradicion'],
@@ -176,7 +187,8 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -12.1264, lng: -77.0360 },
     precio_promedio: 45,
     rating: 4.7,
-    imagen_url: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80',
+    // Pan artesanal de masa madre y café
+    imagen_url: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80',
     destacado: false,
     tags: ['pan-artesanal', 'cafe', 'brunch', 'masa-madre', 'especialidad'],
     horario: 'Lun-Dom 8:00–20:00',
@@ -196,6 +208,7 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -12.1112, lng: -77.0340 },
     precio_promedio: 180,
     rating: 4.5,
+    // Restaurante nocturno con ruinas iluminadas
     imagen_url: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80',
     destacado: true,
     tags: ['arqueologia', 'nocturno', 'romantico', 'huaca', 'cocina-peruana'],
@@ -216,7 +229,8 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -12.1438, lng: -77.0212 },
     precio_promedio: 30,
     rating: 4.6,
-    imagen_url: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80',
+    // Café de especialidad — latte art
+    imagen_url: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80',
     destacado: false,
     tags: ['cafe-especialidad', 'tostado-artesanal', 'barranco', 'bohemio'],
     horario: 'Lun-Dom 7:30–21:00',
@@ -236,6 +250,7 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -12.1455, lng: -77.0224 },
     precio_promedio: 450,
     rating: 4.8,
+    // Plato de alta cocina colorido — biodiversidad peruana
     imagen_url: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=800&q=80',
     destacado: true,
     tags: ['pia-leon', 'biodiversidad', 'innovador', 'best-female-chef', 'degustacion'],
@@ -258,6 +273,7 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -12.1220, lng: -77.0310 },
     precio_promedio: 280,
     rating: 4.6,
+    // Cocina de autor — restaurante elegante
     imagen_url: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80',
     destacado: false,
     tags: ['rafael-osterling', 'cocina-autor', 'italiano', 'elegante'],
@@ -283,6 +299,7 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -13.5190, lng: -71.9805 },
     precio_promedio: 95,
     rating: 4.6,
+    // Comida regional cusqueña — ambiente colonial
     imagen_url: 'https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&q=80',
     destacado: true,
     tags: ['gaston-acurio', 'cusqueno', 'colonial', 'plaza-regocijo', 'cuy'],
@@ -304,6 +321,7 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -13.5153, lng: -71.9770 },
     precio_promedio: 140,
     rating: 4.5,
+    // Restaurante en patio de museo — ambiente cultural
     imagen_url: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80',
     destacado: true,
     tags: ['museo', 'arte-precolombino', 'contemporaneo', 'cultural', 'patio'],
@@ -324,6 +342,7 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -13.5169, lng: -71.9773 },
     precio_promedio: 120,
     rating: 4.5,
+    // Tapas bar — vinos y platos mediterráneos
     imagen_url: 'https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=800&q=80',
     destacado: false,
     tags: ['tapas', 'vinos', 'colonial', 'mediterraneo', 'fusion'],
@@ -344,7 +363,8 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -13.3295, lng: -72.1978 },
     precio_promedio: 600,
     rating: 4.8,
-    imagen_url: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=800&q=80',
+    // Paisaje andino de Moray — alta cocina de altura
+    imagen_url: 'https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=800&q=80',
     destacado: true,
     tags: ['virgilio-martinez', 'moray', 'altitud', 'andino', 'degustacion', 'arqueologia'],
     horario: 'Lun-Sáb 12:00–15:00',
@@ -366,6 +386,7 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -13.5143, lng: -71.9740 },
     precio_promedio: 70,
     rating: 4.4,
+    // Patio al aire libre — comida andina tradicional
     imagen_url: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80',
     destacado: false,
     tags: ['cuy', 'horno-de-barro', 'san-blas', 'alpaca', 'tradicional'],
@@ -386,6 +407,7 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -13.5175, lng: -71.9790 },
     precio_promedio: 65,
     rating: 4.4,
+    // Cocina peruana moderna — platos coloridos
     imagen_url: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80',
     destacado: false,
     tags: ['organico', 'local', 'moderno', 'centro-historico'],
@@ -410,7 +432,8 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -16.3989, lng: -71.5369 },
     precio_promedio: 110,
     rating: 4.6,
-    imagen_url: 'https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=800&q=80',
+    // Parrilla sobre piedra volcánica — carnes
+    imagen_url: 'https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80',
     destacado: true,
     tags: ['piedra-volcanica', 'alpaca', 'eiffel', 'parrilla', 'emblematico'],
     horario: 'Lun-Dom 12:00–23:00',
@@ -430,6 +453,7 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -16.3920, lng: -71.5450 },
     precio_promedio: 45,
     rating: 4.5,
+    // Picantería tradicional — comida arequipeña casera
     imagen_url: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80',
     destacado: true,
     tags: ['picanteria', 'rocoto-relleno', 'chupe', 'tradicion', 'lena'],
@@ -450,6 +474,7 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -16.3985, lng: -71.5360 },
     precio_promedio: 85,
     rating: 4.5,
+    // Restaurante en casona colonial arequipeña
     imagen_url: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&q=80',
     destacado: false,
     tags: ['gaston-acurio', 'arequipeno', 'camarones', 'centro-historico'],
@@ -471,6 +496,7 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -16.3915, lng: -71.5430 },
     precio_promedio: 50,
     rating: 4.4,
+    // Comida casera familiar — jardín soleado
     imagen_url: 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=800&q=80',
     destacado: false,
     tags: ['picanteria', 'tradicion', 'familiar', 'jardin', 'yanahuara'],
@@ -491,9 +517,121 @@ export const restaurantes: Restaurante[] = [
     coordenadas: { lat: -16.3986, lng: -71.5362 },
     precio_promedio: 35,
     rating: 4.3,
-    imagen_url: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80',
+    // Crepes y café — repostería artesanal
+    imagen_url: 'https://images.unsplash.com/photo-1519676867240-f03562e64571?w=800&q=80',
     destacado: false,
     tags: ['crepes', 'cafe', 'jugos', 'viajeros', 'santa-catalina'],
     horario: 'Lun-Dom 8:00–22:00',
+  },
+
+  // ──────────────────────────────────────────────
+  // CHICLAYO
+  // ──────────────────────────────────────────────
+  {
+    id: 'fiesta-chiclayo',
+    nombre: 'Fiesta Chiclayo Gourmet',
+    ciudad: 'Chiclayo',
+    departamento: 'Lambayeque',
+    provincia: 'Chiclayo',
+    distrito: 'Chiclayo',
+    categorias: ['fine-dining', 'comida-tipica', 'restaurante'],
+    ranking: 1,
+    descripcion:
+      'El restaurante insignia del chef Héctor Solís, referente de la cocina lambayecana contemporánea. Arroz con pato, cabrito, ceviche de conchas negras y tortilla de raya elevados a nivel gourmet. Premiado en Summum múltiples años.',
+    direccion: 'Av. Salaverry 1820, Chiclayo',
+    coordenadas: { lat: -6.7714, lng: -79.8409 },
+    precio_promedio: 120,
+    rating: 4.7,
+    // Alta cocina norteña — plato gourmet
+    imagen_url: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80',
+    destacado: true,
+    tags: ['hector-solis', 'lambayecano', 'arroz-con-pato', 'cabrito', 'summum', 'gourmet'],
+    horario: 'Lun-Dom 12:00–16:00, 19:00–23:00',
+    chef: 'Héctor Solís',
+    website: 'https://www.restaurantfiestagourmet.com',
+  },
+  {
+    id: 'el-cantaro-chiclayo',
+    nombre: 'El Cántaro',
+    ciudad: 'Chiclayo',
+    departamento: 'Lambayeque',
+    provincia: 'Lambayeque',
+    distrito: 'Lambayeque',
+    categorias: ['comida-tipica', 'restaurante'],
+    ranking: 2,
+    descripcion:
+      'Restaurante emblemático de Lambayeque con más de 40 años de historia. Conocido por su espesado lambayecano, seco de cabrito y arroz con pato en un ambiente folclórico con artesanías regionales.',
+    direccion: 'Calle 2 de Mayo 180, Lambayeque',
+    coordenadas: { lat: -6.7010, lng: -79.9066 },
+    precio_promedio: 40,
+    rating: 4.5,
+    // Comida norteña tradicional — ambiente folclórico
+    imagen_url: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80',
+    destacado: true,
+    tags: ['espesado', 'cabrito', 'tradicion', 'folklorico', 'lambayeque', 'historia'],
+    horario: 'Lun-Dom 8:00–17:00',
+  },
+  {
+    id: 'picanteria-del-mar-chiclayo',
+    nombre: 'Picantería del Mar',
+    ciudad: 'Chiclayo',
+    departamento: 'Lambayeque',
+    provincia: 'Chiclayo',
+    distrito: 'Pimentel',
+    categorias: ['cevicheria', 'comida-tipica', 'restaurante'],
+    ranking: 3,
+    descripcion:
+      'Ubicada frente al mar en el balneario de Pimentel. Ceviche de conchas negras, tortilla de raya, sudado de mero y chinguirito son sus especialidades. Producto fresco directo del muelle.',
+    direccion: 'Av. La Rivera s/n, Pimentel, Chiclayo',
+    coordenadas: { lat: -6.8367, lng: -79.9321 },
+    precio_promedio: 55,
+    rating: 4.4,
+    // Ceviche frente al mar — mariscos del norte
+    imagen_url: 'https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?w=800&q=80',
+    destacado: false,
+    tags: ['ceviche', 'conchas-negras', 'pimentel', 'mariscos', 'frente-al-mar'],
+    horario: 'Lun-Dom 10:00–17:00',
+  },
+  {
+    id: 'hebrón-chiclayo',
+    nombre: 'Hebrón',
+    ciudad: 'Chiclayo',
+    departamento: 'Lambayeque',
+    provincia: 'Chiclayo',
+    distrito: 'Chiclayo',
+    categorias: ['comida-tipica', 'restaurante'],
+    ranking: 4,
+    descripcion:
+      'Restaurante de cocina regional lambayecana con más de 20 años. Especialistas en seco de cabrito con frejoles, arroz con pato y causa norteña. Punto obligado para locales y visitantes.',
+    direccion: 'Calle Balta 605, Chiclayo',
+    coordenadas: { lat: -6.7730, lng: -79.8378 },
+    precio_promedio: 35,
+    rating: 4.3,
+    // Seco de cabrito norteño — comida regional
+    imagen_url: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800&q=80',
+    destacado: false,
+    tags: ['cabrito', 'arroz-con-pato', 'norteno', 'tradicion', 'regional'],
+    horario: 'Lun-Dom 11:00–16:00',
+  },
+  {
+    id: 'mi-tia-chiclayo',
+    nombre: 'Mi Tía',
+    ciudad: 'Chiclayo',
+    departamento: 'Lambayeque',
+    provincia: 'Chiclayo',
+    distrito: 'Chiclayo',
+    categorias: ['comida-tipica', 'restaurante'],
+    ranking: 5,
+    descripcion:
+      'Restaurante familiar reconocido por su sazón casera lambayecana. Ceviche, arroz con mariscos, espesado y chirimpico en un ambiente cálido. Favorito de los chiclayanos por generaciones.',
+    direccion: 'Av. Aguirre 698, Chiclayo',
+    coordenadas: { lat: -6.7698, lng: -79.8395 },
+    precio_promedio: 30,
+    rating: 4.3,
+    // Cocina casera norteña — platos abundantes
+    imagen_url: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&q=80',
+    destacado: false,
+    tags: ['casero', 'familiar', 'chiclayano', 'espesado', 'chirimpico'],
+    horario: 'Lun-Dom 11:00–16:00',
   },
 ];

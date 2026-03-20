@@ -6,8 +6,8 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=80"
-          alt="Gastronomía peruana"
+          src="https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=1600&q=80"
+          alt="Ceviche peruano — plato bandera del Perú"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80" />
@@ -39,11 +39,11 @@ export default function HeroSection() {
         <div className="flex items-center justify-center gap-8 mt-10 text-white/60 text-sm">
           <div className="flex items-center gap-2">
             <span className="text-lg">🍽️</span>
-            <span>23+ restaurantes</span>
+            <span>28+ restaurantes</span>
           </div>
           <div className="hidden sm:flex items-center gap-2">
             <span className="text-lg">📍</span>
-            <span>3 ciudades</span>
+            <span>4 ciudades</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-lg">⭐</span>
