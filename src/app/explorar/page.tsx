@@ -13,6 +13,7 @@ import {
   getUniqueValues,
   getProvinciasByDepartamento,
   getDistritosByProvincia,
+  getContextualRankLabel,
 } from '@/utils/filters';
 
 function ExplorarContent() {
@@ -142,7 +143,11 @@ function ExplorarContent() {
             {resultados.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                 {resultados.map((r) => (
-                  <RestaurantCard key={r.id} restaurante={r} />
+                  <RestaurantCard
+                    key={r.id}
+                    restaurante={r}
+                    rankLabel={getContextualRankLabel(r, restaurantes, filtros)}
+                  />
                 ))}
               </div>
             ) : (

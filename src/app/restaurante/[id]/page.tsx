@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { restaurantes } from '@/data';
-import { formatPrecio, getRestaurantesByCiudad } from '@/utils/filters';
+import { formatPrecio, getRestaurantesByCiudad, getAllRankings } from '@/utils/filters';
 import RestaurantCard from '@/components/RestaurantCard';
 import type { Metadata } from 'next';
 
@@ -42,7 +42,10 @@ export default async function RestaurantePage({ params }: Props) {
 
   const r = restaurante;
 
-  // Related restaurants from same city
+  // Contextual rankings (departamento, provincia, distrito)
+  const rankings = getAllRankings(r, restaurantes);
+
+  // Related restaurants from same departamento
   const related = getRestaurantesByCiudad(restaurantes, r.ciudad)
     .filter((other) => other.id !== r.id)
     .slice(0, 3);
@@ -73,8 +76,16 @@ export default async function RestaurantePage({ params }: Props) {
           <div className="max-w-4xl">
             <div className="flex flex-wrap items-center gap-2 mb-3">
               <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full">
-                #{r.ranking} en {r.ciudad}
+                {rankings.departamento}
               </span>
+              <span className="bg-white/15 backdrop-blur-sm text-white/90 text-xs font-medium px-3 py-1 rounded-full">
+                {rankings.provincia}
+              </span>
+              {rankings.distrito && (
+                <span className="bg-white/10 backdrop-blur-sm text-white/80 text-xs font-medium px-3 py-1 rounded-full">
+                  {rankings.distrito}
+                </span>
+              )}
               {r.destacado && (
                 <span className="bg-primary-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
                   Destacado
@@ -107,6 +118,29 @@ export default async function RestaurantePage({ params }: Props) {
                 <div className="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-xl">
                   <span className="text-sm font-semibold">{formatPrecio(r.precio_promedio)}</span>
                   <span className="text-green-600 text-sm">promedio</span>
+                </div>
+              </div>
+
+              {/* Rankings */}
+              <div>
+                <h2 className="text-xl font-display font-bold text-gray-900 mb-3">
+                  Rankings
+                </h2>
+                <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-col items-center bg-amber-50 border border-amber-100 rounded-2xl px-5 py-3 min-w-[110px]">
+                    <span className="text-2xl font-bold text-amber-700">{rankings.departamento.split(' ')[0]}</span>
+                    <span className="text-xs text-amber-600 text-center leading-tight mt-0.5">en {r.departamento}</span>
+                  </div>
+                  <div className="flex flex-col items-center bg-orange-50 border border-orange-100 rounded-2xl px-5 py-3 min-w-[110px]">
+                    <span className="text-2xl font-bold text-orange-700">{rankings.provincia.split(' ')[0]}</span>
+                    <span className="text-xs text-orange-600 text-center leading-tight mt-0.5">en {r.provincia}</span>
+                  </div>
+                  {rankings.distrito && (
+                    <div className="flex flex-col items-center bg-red-50 border border-red-100 rounded-2xl px-5 py-3 min-w-[110px]">
+                      <span className="text-2xl font-bold text-red-700">{rankings.distrito.split(' ')[0]}</span>
+                      <span className="text-xs text-red-600 text-center leading-tight mt-0.5">en {r.distrito}</span>
+                    </div>
+                  )}
                 </div>
               </div>
 

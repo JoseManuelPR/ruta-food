@@ -1,5 +1,74 @@
 import { Restaurante, Categoria, FiltrosState } from '@/types';
 
+// ──────────────────────────────────────────────────────────
+// RANKING CONTEXTUAL
+// El ranking de un restaurante varía según el scope geográfico
+// activo: departamento → provincia → distrito.
+// ──────────────────────────────────────────────────────────
+
+/**
+ * Devuelve el puesto (#1, #2…) de un restaurante dentro de un scope geográfico.
+ * El orden usa el campo `ranking` del restaurante (menor = mejor).
+ */
+export function getRankInScope(
+  restaurante: Restaurante,
+  all: Restaurante[],
+  scope: 'departamento' | 'provincia' | 'distrito'
+): number {
+  const scopeValue = restaurante[scope];
+  const group = all
+    .filter((r) => normalizeText(r[scope]) === normalizeText(scopeValue))
+    .sort((a, b) => a.ranking - b.ranking || a.nombre.localeCompare(b.nombre));
+  return group.findIndex((r) => r.id === restaurante.id) + 1;
+}
+
+/**
+ * Devuelve la etiqueta de ranking contextual según los filtros activos.
+ *   - Sin filtros / solo departamento → "#X en [Departamento]"
+ *   - Provincia activa             → "#X en [Provincia]"
+ *   - Distrito activo              → "#X en [Distrito]"
+ */
+export function getContextualRankLabel(
+  restaurante: Restaurante,
+  all: Restaurante[],
+  filtros: Pick<FiltrosState, 'departamento' | 'provincia' | 'distrito'>
+): string {
+  if (filtros.distrito) {
+    const rank = getRankInScope(restaurante, all, 'distrito');
+    return `#${rank} en ${restaurante.distrito}`;
+  }
+  if (filtros.provincia) {
+    const rank = getRankInScope(restaurante, all, 'provincia');
+    return `#${rank} en ${restaurante.provincia}`;
+  }
+  // No filter or departamento-only → rank within departamento
+  const rank = getRankInScope(restaurante, all, 'departamento');
+  return `#${rank} en ${restaurante.departamento}`;
+}
+
+/**
+ * Devuelve los tres rankings de un restaurante (para la página de detalle).
+ */
+export function getAllRankings(
+  restaurante: Restaurante,
+  all: Restaurante[]
+): { departamento: string; provincia: string; distrito: string | null } {
+  const rankDepto = getRankInScope(restaurante, all, 'departamento');
+  const rankProv = getRankInScope(restaurante, all, 'provincia');
+  const rankDist = getRankInScope(restaurante, all, 'distrito');
+
+  // Only show distrito ranking if there are at least 2 restaurants there
+  const distGroup = all.filter(
+    (r) => normalizeText(r.distrito) === normalizeText(restaurante.distrito)
+  );
+
+  return {
+    departamento: `#${rankDepto} en ${restaurante.departamento}`,
+    provincia: `#${rankProv} en ${restaurante.provincia}`,
+    distrito: distGroup.length > 1 ? `#${rankDist} en ${restaurante.distrito}` : null,
+  };
+}
+
 /**
  * Normaliza texto para búsquedas (quita tildes, lowercase)
  */

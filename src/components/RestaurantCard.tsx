@@ -5,9 +5,11 @@ import { formatPrecio } from '@/utils/filters';
 interface Props {
   restaurante: Restaurante;
   variant?: 'default' | 'featured' | 'compact';
+  /** Contextual rank label: "#1 en Lambayeque", "#2 en Chiclayo", etc. */
+  rankLabel?: string;
 }
 
-export default function RestaurantCard({ restaurante, variant = 'default' }: Props) {
+export default function RestaurantCard({ restaurante, variant = 'default', rankLabel }: Props) {
   const r = restaurante;
 
   if (variant === 'compact') {
@@ -57,7 +59,7 @@ export default function RestaurantCard({ restaurante, variant = 'default' }: Pro
 
         {/* Ranking badge */}
         <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-xs font-bold px-2.5 py-1 rounded-full text-primary-700">
-          #{r.ranking} {r.ciudad}
+          {rankLabel ?? `#${r.ranking} en ${r.departamento}`}
         </div>
 
         {/* Destacado badge */}
@@ -100,7 +102,7 @@ export default function RestaurantCard({ restaurante, variant = 'default' }: Pro
 
         {/* Ranking */}
         <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-xs font-bold px-2.5 py-1 rounded-full text-gray-700">
-          #{r.ranking} en {r.ciudad}
+          {rankLabel ?? `#${r.ranking} en ${r.departamento}`}
         </div>
 
         {r.destacado && (
