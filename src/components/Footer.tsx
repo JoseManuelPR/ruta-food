@@ -71,13 +71,27 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <span className="text-sm text-gray-400">Contacto</span>
+                <Link href="/contacto" className="text-sm text-gray-400 hover:text-primary-400 transition-colors">
+                  Contacto
+                </Link>
               </li>
               <li>
-                <span className="text-sm text-gray-400">Para restaurantes</span>
+                <a
+                  href="mailto:josemanuelpr23@gmail.com?subject=Quiero%20aparecer%20en%20Ruta%20del%20Sabor"
+                  className="text-sm text-gray-400 hover:text-primary-400 transition-colors"
+                >
+                  Para restaurantes
+                </a>
               </li>
               <li>
-                <span className="text-sm text-gray-400">Blog</span>
+                <a
+                  href="https://instagram.com/josemanuelpr23"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-400 hover:text-primary-400 transition-colors"
+                >
+                  Instagram
+                </a>
               </li>
             </ul>
           </div>

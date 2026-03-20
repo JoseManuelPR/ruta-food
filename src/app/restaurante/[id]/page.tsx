@@ -21,13 +21,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const restaurante = restaurantes.find((r) => r.id === id);
   if (!restaurante) return { title: 'Restaurante no encontrado' };
 
+  const imageUrl = `https://rutadelsabor.vercel.app${restaurante.imagen_url}`;
   return {
-    title: `${restaurante.nombre} — Ruta del Sabor`,
+    title: restaurante.nombre,
     description: restaurante.descripcion,
     openGraph: {
       title: `${restaurante.nombre} — Ruta del Sabor`,
       description: restaurante.descripcion,
-      images: [restaurante.imagen_url],
+      url:  `https://rutadelsabor.vercel.app/restaurante/${restaurante.id}`,
+      type: 'website',
+      siteName: 'Ruta del Sabor',
+      locale: 'es_PE',
+      images: [{
+        url:    imageUrl,
+        width:  1200,
+        height: 800,
+        alt:    restaurante.nombre,
+      }],
+    },
+    twitter: {
+      card:        'summary_large_image',
+      site:        '@josemanuelpr23',
+      creator:     '@josemanuelpr23',
+      title:       `${restaurante.nombre} — Ruta del Sabor`,
+      description: restaurante.descripcion,
+      images:      [imageUrl],
     },
   };
 }
