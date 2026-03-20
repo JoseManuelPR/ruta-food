@@ -3,6 +3,14 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+// Nav cities: label shown + URL params (departamento, optional provincia)
+const navCiudades = [
+  { label: 'Lima',      href: '/explorar?departamento=Lima' },
+  { label: 'Cusco',     href: '/explorar?departamento=Cusco' },
+  { label: 'Arequipa',  href: '/explorar?departamento=Arequipa' },
+  { label: 'Lambayeque', href: '/explorar?departamento=Lambayeque' },
+];
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -31,30 +39,15 @@ export default function Header() {
             >
               Explorar
             </Link>
-            <Link
-              href="/explorar?ciudad=Lima"
-              className="text-sm text-gray-600 hover:text-primary-600 transition-colors font-medium"
-            >
-              Lima
-            </Link>
-            <Link
-              href="/explorar?ciudad=Cusco"
-              className="text-sm text-gray-600 hover:text-primary-600 transition-colors font-medium"
-            >
-              Cusco
-            </Link>
-            <Link
-              href="/explorar?ciudad=Arequipa"
-              className="text-sm text-gray-600 hover:text-primary-600 transition-colors font-medium"
-            >
-              Arequipa
-            </Link>
-            <Link
-              href="/explorar?ciudad=Chiclayo"
-              className="text-sm text-gray-600 hover:text-primary-600 transition-colors font-medium"
-            >
-              Chiclayo
-            </Link>
+            {navCiudades.map(({ label, href }) => (
+              <Link
+                key={label}
+                href={href}
+                className="text-sm text-gray-600 hover:text-primary-600 transition-colors font-medium"
+              >
+                {label}
+              </Link>
+            ))}
             <Link
               href="/buscar"
               className="flex items-center gap-2 bg-gray-50 hover:bg-gray-100 text-gray-500 text-sm px-4 py-2 rounded-full transition-colors"
@@ -94,34 +87,16 @@ export default function Header() {
             >
               Explorar
             </Link>
-            <Link
-              href="/explorar?ciudad=Lima"
-              onClick={() => setMenuOpen(false)}
-              className="block text-gray-700 hover:text-primary-600 font-medium py-2"
-            >
-              Lima
-            </Link>
-            <Link
-              href="/explorar?ciudad=Cusco"
-              onClick={() => setMenuOpen(false)}
-              className="block text-gray-700 hover:text-primary-600 font-medium py-2"
-            >
-              Cusco
-            </Link>
-            <Link
-              href="/explorar?ciudad=Arequipa"
-              onClick={() => setMenuOpen(false)}
-              className="block text-gray-700 hover:text-primary-600 font-medium py-2"
-            >
-              Arequipa
-            </Link>
-            <Link
-              href="/explorar?ciudad=Chiclayo"
-              onClick={() => setMenuOpen(false)}
-              className="block text-gray-700 hover:text-primary-600 font-medium py-2"
-            >
-              Chiclayo
-            </Link>
+            {navCiudades.map(({ label, href }) => (
+              <Link
+                key={label}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                className="block text-gray-700 hover:text-primary-600 font-medium py-2"
+              >
+                {label}
+              </Link>
+            ))}
             <Link
               href="/buscar"
               onClick={() => setMenuOpen(false)}

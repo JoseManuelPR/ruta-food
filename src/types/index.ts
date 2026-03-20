@@ -53,7 +53,9 @@ export interface CategoriaInfo {
 
 export interface CiudadInfo {
   id: string;
+  /** Display name (e.g. "Chiclayo") */
   nombre: string;
+  /** Departamento/Región (e.g. "Lambayeque") — used for filtering */
   departamento: string;
   descripcion: string;
   imagen_url: string;

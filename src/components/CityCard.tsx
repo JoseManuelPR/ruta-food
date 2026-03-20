@@ -5,10 +5,20 @@ interface Props {
   ciudad: CiudadInfo;
 }
 
+function buildExplorarUrl(ciudad: CiudadInfo): string {
+  const params = new URLSearchParams();
+  params.set('departamento', ciudad.departamento);
+  // If the city name differs from departamento, it's a province-level entry
+  if (ciudad.nombre !== ciudad.departamento) {
+    params.set('provincia', ciudad.nombre);
+  }
+  return `/explorar?${params.toString()}`;
+}
+
 export default function CityCard({ ciudad }: Props) {
   return (
     <Link
-      href={`/explorar?ciudad=${ciudad.nombre}`}
+      href={buildExplorarUrl(ciudad)}
       className="group relative overflow-hidden rounded-2xl aspect-[3/4] md:aspect-[4/5]"
     >
       <img

@@ -19,19 +19,24 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Ciudades */}
+          {/* Departamentos */}
           <div>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-              Ciudades
+              Departamentos
             </h3>
             <ul className="space-y-2">
-              {['Lima', 'Cusco', 'Arequipa', 'Chiclayo'].map((ciudad) => (
-                <li key={ciudad}>
+              {[
+                { label: 'Lima',       href: '/explorar?departamento=Lima' },
+                { label: 'Cusco',      href: '/explorar?departamento=Cusco' },
+                { label: 'Arequipa',   href: '/explorar?departamento=Arequipa' },
+                { label: 'Lambayeque', href: '/explorar?departamento=Lambayeque' },
+              ].map(({ label, href }) => (
+                <li key={label}>
                   <Link
-                    href={`/explorar?ciudad=${ciudad}`}
+                    href={href}
                     className="text-sm text-gray-400 hover:text-primary-400 transition-colors"
                   >
-                    {ciudad}
+                    {label}
                   </Link>
                 </li>
               ))}

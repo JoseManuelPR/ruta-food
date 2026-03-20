@@ -31,13 +31,16 @@ function ExplorarContent() {
 
   // Initialize from URL params
   useEffect(() => {
-    const ciudad = searchParams.get('ciudad');
+    // Support ?departamento= + ?provincia= (new) and legacy ?ciudad= (backward compat)
+    const departamento = searchParams.get('departamento') || searchParams.get('ciudad') || '';
+    const provincia = searchParams.get('provincia') || '';
     const categoria = searchParams.get('categoria');
 
-    if (ciudad || categoria) {
+    if (departamento || provincia || categoria) {
       setFiltros((prev) => ({
         ...prev,
-        departamento: ciudad || prev.departamento,
+        departamento: departamento || prev.departamento,
+        provincia: provincia || prev.provincia,
         categorias: categoria ? [categoria as Categoria] : prev.categorias,
       }));
     }
