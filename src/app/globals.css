@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════
+   DESIGN TOKENS — Custom Properties
+   Inspired by pbakaus/impeccable + vercel-labs
+   ═══════════════════════════════════════════════ */
+:root {
+  /* Easing — exponential curves feel natural (impeccable/animate) */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Timing */
+  --duration-instant:  100ms;
+  --duration-fast:     200ms;
+  --duration-normal:   300ms;
+  --duration-slow:     500ms;
+  --duration-entrance: 700ms;
+
+  /* Fluid spacing */
+  --space-section: clamp(3rem, 6vw, 6rem);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply text-warm-900 bg-warm-50;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Fluid type scale (typeset skill) */
+  h1 { font-size: clamp(2.25rem, 5vw + 1rem, 4.5rem); }
+  h2 { font-size: clamp(1.75rem, 3vw + 0.5rem, 3rem); }
+  h3 { font-size: clamp(1.25rem, 2vw + 0.25rem, 1.75rem); }
+
+  /* Focus indicators (polish skill) */
+  :focus-visible {
+    outline: 2px solid theme('colors.primary.500');
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: theme('colors.primary.200');
+    color: theme('colors.primary.900');
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ── Glass effect ── */
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+  }
+
+  /* ── Card lift hover (animate/delight) — enhanced ── */
+  .card-hover {
+    transition:
+      transform var(--duration-normal) var(--ease-out-quart),
+      box-shadow var(--duration-normal) var(--ease-out-quart),
+      border-color var(--duration-normal) var(--ease-out-quart);
+  }
+  .card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 20px 50px -12px rgba(0, 0, 0, 0.15),
+      0 8px 20px -4px rgba(0, 0, 0, 0.08);
+  }
+  .card-hover:active {
+    transform: translateY(-2px);
+    transition-duration: 100ms;
+  }
+
+  /* ── Image zoom on parent hover — smoother ── */
+  .img-zoom {
+    transition: transform var(--duration-slow) var(--ease-out-quint);
+  }
+  .group:hover .img-zoom {
+    transform: scale(1.05);
+  }
+
+  /* ── Button micro-interactions — enhanced (animate skill) ── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 font-semibold
+           transition-all duration-200;
+    background: linear-gradient(135deg, theme('colors.primary.500'), theme('colors.primary.600'));
+    box-shadow:
+      0 2px 8px -2px rgba(238, 119, 17, 0.4),
+      0 0 0 0 rgba(238, 119, 17, 0);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 8px 24px -4px rgba(238, 119, 17, 0.5),
+      0 0 0 0 rgba(238, 119, 17, 0);
+    filter: brightness(1.05);
+  }
+  .btn-primary:active {
+    transform: translateY(0) scale(0.97);
+    transition-duration: 100ms;
+  }
+  .btn-primary:focus-visible {
+    box-shadow:
+      0 2px 8px -2px rgba(238, 119, 17, 0.4),
+      0 0 0 3px rgba(238, 119, 17, 0.3);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 font-semibold
+           border-2 transition-all duration-200;
+  }
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+  }
+  .btn-secondary:active {
+    transform: translateY(0) scale(0.97);
+    transition-duration: 100ms;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   SCROLL-TRIGGERED ANIMATIONS (animate skill)
+   Uses Intersection Observer via data attributes
+   ═══════════════════════════════════════════════ */
+
+/* Elements with [data-animate] start hidden */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--duration-entrance) var(--ease-out-quint),
+    transform var(--duration-entrance) var(--ease-out-quint);
+}
+
+/* When they enter viewport: .is-visible */
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children with delay */
+[data-animate-delay="1"] { transition-delay: 100ms; }
+[data-animate-delay="2"] { transition-delay: 200ms; }
+[data-animate-delay="3"] { transition-delay: 300ms; }
+[data-animate-delay="4"] { transition-delay: 400ms; }
+[data-animate-delay="5"] { transition-delay: 500ms; }
+
+/* Scale entrance variant */
+[data-animate="scale"] {
+  opacity: 0;
+  transform: scale(0.95);
+}
+[data-animate="scale"].is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Slide-from-left variant */
+[data-animate="slide-left"] {
+  opacity: 0;
+  transform: translateX(-32px);
+}
+[data-animate="slide-left"].is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide-from-right variant */
+[data-animate="slide-right"] {
+  opacity: 0;
+  transform: translateX(32px);
+}
+[data-animate="slide-right"].is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ═══════════════════════════════════════════════
+   LEGACY ANIMATIONS (kept for backward compat)
+   ═══════════════════════════════════════════════ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(100%); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.7; }
+}
+
+@keyframes counter {
+  from { --num: 0; }
+}
+
+.animate-fade-in { animation: fadeIn 0.5s var(--ease-out-quart) forwards; }
+.animate-fade-in-delay-1 { animation: fadeIn 0.5s var(--ease-out-quart) 0.1s forwards; opacity: 0; }
+.animate-fade-in-delay-2 { animation: fadeIn 0.5s var(--ease-out-quart) 0.2s forwards; opacity: 0; }
+.animate-fade-in-delay-3 { animation: fadeIn 0.5s var(--ease-out-quart) 0.3s forwards; opacity: 0; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.08) 50%, transparent 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Shimmer text — premium gradient animation for hero headlines */
+@keyframes shimmer-text {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-shimmer-text {
+  background-size: 200% auto;
+  animation: shimmer-text 4s ease-in-out infinite;
+}
+
+/* Scroll-cue — finite, gentle nudge (UI UX Pro Max: no infinite loops on structural elements) */
+@keyframes scroll-cue {
+  0%   { transform: translateY(0); opacity: 1; }
+  50%  { transform: translateY(6px); opacity: 0.4; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.animate-scroll-cue {
+  animation: scroll-cue 1.8s var(--ease-out-quart) 1s 3;
+}
+
+/* Ping animation for live indicator */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.animate-ping {
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* ═══════════════════════════════════════════════
+   ACCESSIBILITY (animate skill — CRITICAL)
+   ═══════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   CUSTOM SCROLLBAR (polish)
+   ═══════════════════════════════════════════════ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: theme('colors.warm.300');
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.warm.400');
+}
+
+/* ═══════════════════════════════════════════════
+   PARALLAX HERO (via CSS only)
+   ═══════════════════════════════════════════════ */
+.parallax-container {
+  perspective: 1px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════════════
+   TABULAR NUMBERS (typography skill)
+   Use monospaced figures for numeric data
+   ═══════════════════════════════════════════════ */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ═══════════════════════════════════════════════
+   SMOOTH ANCHOR SCROLL (UX polish)
+   ═══════════════════════════════════════════════ */
+html {
+  scroll-padding-top: 5rem;
+}
+
+/* ═══════════════════════════════════════════════
+   ENHANCED LINK UNDERLINE (critique skill)
+   ═══════════════════════════════════════════════ */
+.link-underline {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: theme('colors.primary.300');
+  transition: text-decoration-color var(--duration-fast) ease;
+}
+.link-underline:hover {
+  text-decoration-color: theme('colors.primary.600');
+}
